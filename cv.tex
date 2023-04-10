@@ -18,8 +18,8 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
-
+\documentclass[10pt, a4paper]{awesome-cv}
+\usepackage{paracol}
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
@@ -53,7 +53,7 @@
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo{./examples/profile.png}
-\name{Francisco}{Fitas}
+\name{}{Francisco Fitas}
 \position{Consultant Engineer{\enskip\cdotp\enskip}Digital Applications}
 
 
@@ -93,11 +93,16 @@
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
-\input{cv/education.tex}
-\input{cv/skills.tex}
-\input{cv/experience.tex}
-\input{cv/projects.tex}
 
+\columnratio{0.5}
+\begin{paracol}{2}
+\input{cv/education.tex}
+\switchcolumn
+\input{cv/skills.tex}
+\end{paracol}
+\input{cv/experience.tex}
+
+\input{cv/projects.tex}
 
 
 %-------------------------------------------------------------------------------
